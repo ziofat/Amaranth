@@ -1,0 +1,15 @@
+{
+	"extends": "airbnb",
+	"installedESLint": true,
+	"plugins": [],
+	"ecmaVersion": 5,
+	"globals":{
+		"describe": false,
+		"it": false
+	},
+	"rules":{
+		"indent": ["error", "tab"],
+		"linebreak-style": ["off", "windows"],
+		"consistent-return": "off"
+	}
+}
