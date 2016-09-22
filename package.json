@@ -1,6 +1,6 @@
 {
   "name": "amaranth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A password management solution without storing them",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,5 @@
     "should": "^11.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
   }
 }
