@@ -9,9 +9,6 @@ dependencies:
 general:
   artifacts:
     - ./coverage
-  branches:
-    only:
-      - master
 
 test:
   post:
