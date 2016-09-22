@@ -3,6 +3,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,user-scalable=no,width=device-width" />
+	<meta name="theme-color" content="#E91E63"/>
 	<title>Amaranth - A password manegement solution without storing your password</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,7 +13,7 @@
 			font-size: 22px;
 			color: #FFF;
 			margin-right: 7px;
-			background-color: #009688;
+			background-color: #E91E63;
 			width: 33px;
 			display: inline-block;
 			text-align: center;
@@ -23,10 +25,10 @@
 			display: inline-block;
 			color: #212121;
 			text-align: center;
-			border: 2px solid #009688;
+			border: 2px solid #E91E63;
 		}
 		span.password-hover{
-			border: 2px solid #FF9800;
+			border: 2px solid #2196F3;
 		}
 	</style>
 </head>
@@ -48,7 +50,7 @@
 
 	<md-whiteframe class="md-whiteframe-2dp" flex-sm="90" flex-gt-sm="75" flex-gt-md="65" layout="column" style="background: white;margin:auto;padding:16px;">
 		<div layout="column">
-			<h2 style="color:#009688"><span class="title">1</span>Input</h2>
+			<h2 style="color:#E91E63"><span class="title">1</span>Input</h2>
 			<div layout="row">
 				<md-input-container>
 					<label>Main Password</label>
@@ -69,7 +71,7 @@
 			</md-input-container>
 		</div>
 		<div layout="column">
-			<h2 style="color:#009688"><span class="title">2</span>Get</h2>
+			<h2 style="color:#E91E63"><span class="title">2</span>Get</h2>
 			<div layout="row">
 				<span class="password" ng-class="hover?'password-hover':''" flex id="password">{{password==''?'&nbsp;':password}}</span>
 				<md-button id="copy" data-clipboard-target="#password" class="md-raised" ng-class="hover?'md-accent':'md-primary'" style="margin: 0;border-radius: 0;" ng-mouseenter="hover=true" ng-mouseleave="hover=false">Copy</md-button>
@@ -89,8 +91,8 @@
 var app = angular.module('Amaranth', ['ngMaterial'])
 .config(function($mdThemingProvider) {
 	$mdThemingProvider.theme('default')
-		.primaryPalette('teal')
-		.accentPalette('orange')
+		.primaryPalette('pink')
+		.accentPalette('blue')
 });
 
 app.controller('MainCtrl', ['$scope', '$mdToast', function($scope, $mdToast){
