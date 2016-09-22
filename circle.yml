@@ -10,8 +10,8 @@ general:
   artifacts:
     - ./coverage
   branches:
-    ignore:
-      - gh-pages
+    only:
+      - master
 
 test:
   post:
