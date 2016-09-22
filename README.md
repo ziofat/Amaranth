@@ -1,4 +1,8 @@
 # Amaranth
+[![npm](https://img.shields.io/npm/v/amaranth.svg?maxAge=3600&style=flat-square)](https://github.com/ziofat/Amaranth)
+[![CircleCI](https://img.shields.io/circleci/project/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://circleci.com/gh/ziofat/Amaranth/tree/master)
+[![codecov](https://img.shields.io/codecov/c/github/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://codecov.io/gh/ziofat/Amaranth)
+
 A password management tool without storing them.
 It is Safe and Rememberable.
 
