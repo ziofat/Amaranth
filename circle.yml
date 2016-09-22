@@ -9,6 +9,9 @@ dependencies:
 general:
   artifacts:
     - ./coverage
+  branches:
+    ignore:
+      - gh-pages
 
 test:
   post:

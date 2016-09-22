@@ -39,3 +39,5 @@ jspm_packages
 # Sublime Text project files
 /Amaranth.sublime-workspace
 /Amaranth.sublime-project
+/dist
+/gulpfile.js
