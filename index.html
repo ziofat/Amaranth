@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="Amaranth" lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,user-scalable=no,width=device-width" />
+	<meta name="theme-color" content="#E91E63"/>
+	<title>Amaranth - A password manegement solution without storing your password</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		span.title{
+			font-size: 22px;
+			color: #FFF;
+			margin-right: 7px;
+			background-color: #E91E63;
+			width: 33px;
+			display: inline-block;
+			text-align: center;
+		}
+		span.password{
+			font-size: 24px;
+			line-height: 30px;
+			font-family: 'Consolas';
+			display: inline-block;
+			color: #212121;
+			text-align: center;
+			border: 2px solid #E91E63;
+		}
+		span.password-hover{
+			border: 2px solid #2196F3;
+		}
+	</style>
+</head>
+<body style="background: #f1f1f1;" ng-cloak>
+	
+<div ng-controller="MainCtrl" layout-fill layout="column">
+	<md-toolbar class="md-toolbar" layout="row">
+		<h2 class="md-toolbar-tools">
+			<span>Amaranth</span>
+		</h2>
+		<span flex></span>
+		<h2 class="md-toolbar-tools">
+			<span flex></span>
+			<a href="https://github.com/ziofat/Amaranth"><md-button class="md-icon-button" ng-click="seeCode()">
+				<md-icon>code</md-icon>
+			</md-button></a>
+		</h2>
+	</md-toolbar>
+
+	<md-whiteframe class="md-whiteframe-2dp" flex-sm="90" flex-gt-sm="75" flex-gt-md="65" layout="column" style="background: white;margin:auto;padding:16px;;min-height:380px;">
+		<div layout="column">
+			<h2 style="color:#E91E63"><span class="title">1</span>Input</h2>
+			<div layout="row">
+				<md-input-container>
+					<label>Main Password</label>
+					<input type="password" ng-model="mainpass" ng-change="calc()">
+				</md-input-container>
+				<md-input-container>
+					<label>Site Name</label>
+					<input ng-model="site" ng-change="calc()">
+				</md-input-container>
+			</div>
+			<md-input-container class="md-block" flex-gt-sm>
+				<label>Password Type</label>
+				<md-select ng-model="type" ng-change="calc()">
+					<md-option ng-repeat="key in types" value="{{key}}">
+						{{key}}
+					</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		<div layout="column">
+			<h2 style="color:#E91E63"><span class="title">2</span>Get</h2>
+			<div layout="row">
+				<span class="password" ng-class="hover?'password-hover':''" flex id="password">{{password==''?'&nbsp;':password}}</span>
+				<md-button id="copy" data-clipboard-target="#password" class="md-raised" ng-class="hover?'md-accent':'md-primary'" style="margin: 0;border-radius: 0;" ng-mouseenter="hover=true" ng-mouseleave="hover=false">Copy</md-button>
+			</div>
+		</div>
+	</md-whiteframe>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-aria.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script type="text/javascript" src="./dist/amaranth.js"></script>
+<script type="text/javascript">
+var app = angular.module('Amaranth', ['ngMaterial'])
+.config(function($mdThemingProvider) {
+	$mdThemingProvider.theme('default')
+		.primaryPalette('pink')
+		.accentPalette('blue')
+});
+
+app.controller('MainCtrl', ['$scope', '$mdToast', function($scope, $mdToast){
+	$scope.type = 'Classic';
+	$scope.types = ['PIN', 'Short', 'Classic', 'Long'];
+
+	$scope.calc = function(){
+		$scope.password = amaranth($scope.mainpass,$scope.site,$scope.type);
+	}
+
+	var clipboard = new Clipboard('#copy');
+
+	clipboard.on('success', function(e) {
+		$mdToast.show(
+			$mdToast.simple()
+				.textContent('Copied!')
+				.position('bottom')
+				.hideDelay(3000)
+		);
+		e.clearSelection();
+	});
+}]);
+</script>
+</body>
+</html>
