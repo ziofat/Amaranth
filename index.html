@@ -28,7 +28,7 @@
 			border: 2px solid #E91E63;
 		}
 		span.password-hover{
-			border: 2px solid #2196F3;
+			border: 2px solid #673AB7;
 		}
 	</style>
 </head>
@@ -48,7 +48,7 @@
 		</h2>
 	</md-toolbar>
 
-	<md-whiteframe class="md-whiteframe-2dp" flex-sm="90" flex-gt-sm="75" flex-gt-md="65" layout="column" style="background: white;margin:auto;padding:16px;;min-height:380px;">
+	<md-whiteframe class="md-whiteframe-2dp" flex-sm="90" flex-gt-sm="75" flex-gt-md="65" layout="column" style="background: white;margin:auto;padding:16px;min-height:380px;">
 		<div layout="column">
 			<h2 style="color:#E91E63"><span class="title">1</span>Input</h2>
 			<div layout="row">
@@ -86,26 +86,26 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
-<script type="text/javascript" src="./dist/amaranth.js"></script>
+<script type="text/javascript" src="amaranth.js"></script>
 <script type="text/javascript">
 var app = angular.module('Amaranth', ['ngMaterial'])
-.config(function($mdThemingProvider) {
+.config(function ($mdThemingProvider) {
 	$mdThemingProvider.theme('default')
 		.primaryPalette('pink')
-		.accentPalette('blue')
+		.accentPalette('deep-purple');
 });
 
-app.controller('MainCtrl', ['$scope', '$mdToast', function($scope, $mdToast){
+app.controller('MainCtrl', ['$scope', '$mdToast', function ($scope, $mdToast) {
 	$scope.type = 'Classic';
 	$scope.types = ['PIN', 'Short', 'Classic', 'Long'];
 
-	$scope.calc = function(){
-		$scope.password = amaranth($scope.mainpass,$scope.site,$scope.type);
-	}
+	$scope.calc = function () {
+		$scope.password = amaranth($scope.mainpass,$scope.site, $scope.type);
+	};
 
 	var clipboard = new Clipboard('#copy');
 
-	clipboard.on('success', function(e) {
+	clipboard.on('success', function (e) {
 		$mdToast.show(
 			$mdToast.simple()
 				.textContent('Copied!')

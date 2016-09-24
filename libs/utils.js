@@ -35,10 +35,13 @@ class Utils {
 		const md5One = md5(master, service);
 		const md5Two = md5(md5One, 'zio');
 		const md5Thr = md5(md5One, 'fat');
-		const source = md5Two + md5Thr;
+		let seeds = '';
+		for (let i = 0; i < md5Two.length; i++) {
+			seeds += md5Two[i] + md5Thr[i];
+		}
 		const indexArray = [];
-		for (let i = 0; i < source.length / 2; i++) {
-			const idx = source.substr(i * 2, 2);
+		for (let i = 0; i < seeds.length / 2; i++) {
+			const idx = seeds.substr(i * 2, 2);
 			indexArray.push(idx);
 		}
 		return indexArray;
