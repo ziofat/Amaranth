@@ -51,10 +51,13 @@ var Utils = function () {
 			var md5One = md5(master, service);
 			var md5Two = md5(md5One, 'zio');
 			var md5Thr = md5(md5One, 'fat');
-			var source = md5Two + md5Thr;
+			var seeds = '';
+			for (var i = 0; i < md5Two.length; i++) {
+				seeds += md5Two[i] + md5Thr[i];
+			}
 			var indexArray = [];
-			for (var i = 0; i < source.length / 2; i++) {
-				var idx = source.substr(i * 2, 2);
+			for (var _i = 0; _i < seeds.length / 2; _i++) {
+				var idx = seeds.substr(_i * 2, 2);
 				indexArray.push(idx);
 			}
 			return indexArray;
