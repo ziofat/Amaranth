@@ -38,7 +38,7 @@ The benifits of using Amaranth:
 There is also a shortcoming, if you choose this solution, you need to change your current passwords.
 
 # Usage
-There will be a Chrome extension for this.
+There is a [Chrome extension](https://chrome.google.com/webstore/detail/amaranth-password-manager/hbkfmkahandehhbdlgbfhaeacecfeceo) for this. ([repo](https://github.com/ziofat/Amaranth-chrome))
 
 This repository is for algorithm. To check it, just
 
