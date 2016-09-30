@@ -58,7 +58,8 @@ Currently Amaranth support 4 types of password:
 - Long: 4 uppercase characters, 6 lowercase characters, 4 digit, 2 punctuation
 
 # Author
-Daniel Li
+[Daniel Li](https://github.com/ziofat)
+[Yao Peng](https://github.com/vickyoopy)
 
 # License
 See LICENSE file.
