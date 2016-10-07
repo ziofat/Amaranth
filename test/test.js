@@ -1,3 +1,4 @@
+'use strict';
 const amaranth = require('../index');
 const utils = require('../libs/utils');
 const should = require('should');

@@ -51,6 +51,8 @@ const password = amaranth('main password', 'site id', 'Long');
 // amaranth(mainPassword, siteId, passwordType);
 ```
 
+The Amaranth was tested on node v4.6.0 and v6.7.0, should works on all version of nodejs above v4.6.0.
+
 Currently Amaranth support 4 types of password:
 - PIN: 4 digit
 - Short: 1 uppercase characters, 2 lowercase characters, 1 digit
@@ -59,6 +61,7 @@ Currently Amaranth support 4 types of password:
 
 # Author
 [Daniel Li](https://github.com/ziofat)
+
 [Yao Peng](https://github.com/vickyoopy)
 
 # License
