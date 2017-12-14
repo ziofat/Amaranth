@@ -2,6 +2,7 @@
 [![npm](https://img.shields.io/npm/v/amaranth.svg?maxAge=3600&style=flat-square)](https://github.com/ziofat/Amaranth)
 [![CircleCI](https://img.shields.io/circleci/project/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://circleci.com/gh/ziofat/Amaranth/tree/master)
 [![codecov](https://img.shields.io/codecov/c/github/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://codecov.io/gh/ziofat/Amaranth)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fziofat%2FAmaranth.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fziofat%2FAmaranth?ref=badge_shield)
 
 A password management tool without storing them.
 It is Safe and Rememberable.
@@ -66,3 +67,6 @@ Currently Amaranth support 4 types of password:
 
 # License
 See LICENSE file.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fziofat%2FAmaranth.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fziofat%2FAmaranth?ref=badge_large)
