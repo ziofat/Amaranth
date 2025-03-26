@@ -2,6 +2,7 @@
 [![npm](https://img.shields.io/npm/v/amaranth.svg?maxAge=3600&style=flat-square)](https://github.com/ziofat/Amaranth)
 [![CircleCI](https://img.shields.io/circleci/project/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://circleci.com/gh/ziofat/Amaranth/tree/master)
 [![codecov](https://img.shields.io/codecov/c/github/ziofat/Amaranth.svg?maxAge=3600&style=flat-square)](https://codecov.io/gh/ziofat/Amaranth)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fziofat%2FAmaranth.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fziofat%2FAmaranth?ref=badge_shield)
 
 A password management tool without storing them.
 It is Safe and Rememberable.
@@ -38,7 +39,7 @@ The benifits of using Amaranth:
 There is also a shortcoming, if you choose this solution, you need to change your current passwords.
 
 # Usage
-There will be a Chrome extension for this.
+There is a [Chrome extension](https://chrome.google.com/webstore/detail/amaranth-password-manager/hbkfmkahandehhbdlgbfhaeacecfeceo) for this. ([repo](https://github.com/ziofat/Amaranth-chrome))
 
 This repository is for algorithm. To check it, just
 
@@ -51,6 +52,8 @@ const password = amaranth('main password', 'site id', 'Long');
 // amaranth(mainPassword, siteId, passwordType);
 ```
 
+The Amaranth was tested on node v4.6.0 and v6.7.0, should works on all version of nodejs above v4.6.0.
+
 Currently Amaranth support 4 types of password:
 - PIN: 4 digit
 - Short: 1 uppercase characters, 2 lowercase characters, 1 digit
@@ -58,7 +61,12 @@ Currently Amaranth support 4 types of password:
 - Long: 4 uppercase characters, 6 lowercase characters, 4 digit, 2 punctuation
 
 # Author
-Daniel Li
+[Daniel Li](https://github.com/ziofat)
+
+[Yao Peng](https://github.com/vickyoopy)
 
 # License
 See LICENSE file.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fziofat%2FAmaranth.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fziofat%2FAmaranth?ref=badge_large)
